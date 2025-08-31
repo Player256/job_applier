@@ -62,7 +62,7 @@ async def main():
 	)
 
 	task = f"""
-		1. Open https://www.linkedin.com/jobs → Log in with:
+		1. Open https://www.linkedin.com/jobs/collections/recommended/?currentJobId=4292948631 -> Log in with:
 		Email: {email}, Password: {password}.
 		If OTP required, use gmail_find_otp() to fetch from Gmail.
 

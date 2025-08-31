@@ -4,6 +4,11 @@ This project automates the process of applying to jobs on LinkedIn, retrieving O
 
 ---
 
+## Demo
+[Demo](assets/demo_1.mp4)
+
+---
+
 ## Prerequisites
 
 * Python 3.10+

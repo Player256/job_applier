@@ -5,7 +5,7 @@ This project automates the process of applying to jobs on LinkedIn, retrieving O
 ---
 
 ## Demo
-[Demo](https://photos.app.goo.gl/bqUgFW34bbf9paT5A)
+[Demo](https://photos.app.goo.gl/bqUgFW34bbf9paT5A) 
 
 ---
 

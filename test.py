@@ -62,19 +62,50 @@ async def main():
 	)
 
 	task = f"""
-	1. Go to https://www.linkedin.com and click on the jobs icon to access the jobs site. If prompted to log in, use the following credentials:
-	   Email: {email}
-	   Password: {password}
-	   If prompted for OTP, use the gmail_find_otp function to retrieve the OTP from your Gmail inbox.
-	2. Search for "Software Engineer" jobs in "Bangalore,Karnataka,India" in the search bar.
-    3. Filter results to show only "Remote" jobs.
-	4. Apply to the first 3 jobs that match the criteria using the "Easy Apply" option.
-    5. For each application, fill out the required fields with placeholder information and submit.
-    6. After applying, extract the job titles,companies, applied date of the applied jobs in accordance to the f{JobPost} schema.
-    7. For the current date, use this {datetime.now().date()}
-    8. For application status, use one of the following: "applied", "interviewing", "rejected", "offer_received".
-    9. Compile the jobs into a list following the f{Jobs} schema and print the JSON output.
-	"""
+		1. Open https://www.linkedin.com/jobs → Log in with:
+		Email: {email}, Password: {password}.
+		If OTP required, use gmail_find_otp() to fetch from Gmail.
+
+		2. Dont scroll or waste moving around, find thesearch bar. There are specifically two search bars one for job_title and another for location. In the search bar:
+		- Job Title: "Machine Learning Intern"
+		- Location: "Bangalore" (clear existing text first if any).
+		- Run the search.
+
+		3. Apply filters:
+		- Job Type → Internship
+		- Easy Apply → Enabled
+		- Show results.
+
+		4. For the first 3 results with "Easy Apply":
+		- Open job → Click "Easy Apply"
+		- Auto-fill form using:
+			{{
+			"First Name": "Dattatreya",
+			"Last Name": "Varma",
+			"Email": "{email}",
+			"Phone": "9437772429",
+			"City": "Bangalore",
+			"State": "Karnataka",
+			"Country": "India",
+			"Zip Code": "560076",
+			"Notice Period": "0",
+			"Current CTC": "0",
+			"Expected CTC": "10",
+			"Experience in Python": "1",
+			"Experience in Pytorch": "1",
+			"Experience in Machine Learning": "1",
+			"Experience in Deep Learning": "1"
+			}}
+		- Keep pre-filled fields unchanged.
+		- If additional steps/questions appear → answer with placeholders or skip.
+		- Click "Next" untill you get "Submit" and click "Submit".
+
+		5. After applying, extract for each job:
+		- title, company, applied date = {datetime.now().date()}, status = "applied".
+
+		6. Save results in f{Jobs} schema and print JSON output.
+"""
+
 
 	agent = Agent(
 		task=task,
